@@ -1,13 +1,13 @@
 @echo off 
 
-set "installer=%temp%\gtahub-intaller.exe"
+set "installer=%temp%\gtahub-installer.exe"
 
 set "gtahub=%localappdata%\Programs\launcher-gtahub"
 
 set "launcher=%gtahub%\GTAHub Launcher.exe"
 set "uninstaller=%gtahub%\Uninstall GTAHub Launcher.exe"
 
-set "version=a-1.0.0"
+set "version=v-1.0.1"
 
 cd C:\GTAHub\
 
@@ -96,7 +96,7 @@ if /i "%choice%"=="n" (goto menu)
 echo [INTEGRITY] Checking installer
 if not exist %installer% (
 	echo [INTEGRITY] GTAHUB installer not found. Downloading
-	curl https://cdn.gtahub.gg/gtahub-launcher.exe -o "%file%"
+	curl https://cdn.gtahub.gg/gtahub-launcher.exe -o "%installer%"
 )
 echo Installing...
 %installer%
